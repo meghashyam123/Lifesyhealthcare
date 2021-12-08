@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Lifesy - Prediction</title>
+    <meta
+      content=""
+      name="We are Team of Goal Diggers. Each member of our Team is dedicated to providing the highest standard of care and Support to all the patients by recommending required solution according to symptoms of patient’s disease. We are recommending prescription & nearby hospitals according to patients location."
+    />
+    <meta
+      content=""
+      name="Welcome to Lifesy Make your health classy with lifesy"
+    />
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon" />
+    <link href="../assets/img/favicon.jpeg" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <!-- Vendor CSS Files -->
+    <link
+      href="../assets/vendor/animate.css/animate.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="brython.js"></script>
+    <script type="text/javascript" src="brython_stdlib.js"></script>
+
+    <script>
+      let req = new XMLHttpRequest();
+
+      req.open("GET", "list.json", true);
+      req.onload = () => {
+        data = req.responseText;
+        var myArr = JSON.parse(data);
+        myFunction(myArr);
+        console.log(myArr);
+      };
+
+      req.send();
+
+      function myFunction(arr) {
+        var i;
+        let out = "";
+
+        for (i = 0; i < arr.length; i++) {
+          out += "<option>" + arr[i] + "</option><br>";
+        }
+        document.getElementById("symptoms1").innerHTML = out;
+
+        document.getElementById("symptoms2").innerHTML = out;
+        document.getElementById("symptoms3").innerHTML = out;
+        document.getElementById("symptoms4").innerHTML = out;
+        document.getElementById("symptoms5").innerHTML = out;
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+      <div
+        class="
+          container
+          d-flex
+          align-items-center
+          justify-content-center justify-content-md-between
+        "
+      >
+        <div class="align-items-center d-none d-md-flex">
+          <i class="bi bi-clock"></i> Monday - Sunday, 24x7
+        </div>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-phone"></i>
+          <a href="mailto: askathcrs@gmail.com">Send Email</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container d-flex align-items-center">
+        <a href="index.html" class="logo me-auto"
+          ><img src="../assets/img/logo.jpeg" alt="logo"
+        /></a>
+
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="../PHP Admin/patient/patient.php"
+                >Predict Disease</a
+              >
+            </li>
+
+            <li class="dropdown">
+              <a href="#"
+                ><span>Services</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li>
+                  <a href="../templates/covid19.html">Covid 19 updates</a>
+                </li>
+                <li><a href="../store.html">Locate Hospitals</a></li>
+                <li>
+                  <a href="../templates/PharmacyProducts.html"
+                    >Pharmacy Products</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li><a class="nav-link scrollto" href="../index.html">About</a></li>
+            <li>
+              <a
+                class="nav-link scrollto"
+                href="../templates/documentation.html"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="../index.html">Our Team</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="../index.html">Contact</a>
+            </li>
+            <li><a class="nav-link scrollto" href="../blogs.html">Blogs</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main">
+      <!-- ======= Breadcrumbs Section ======= -->
+      <section class="breadcrumbs">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5>Enter your Details/Symptom & Predict your disease.</h5>
+            <ol>
+              <li><a href="./index.html">Home</a></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <!-- End Breadcrumbs Section -->
+
+      <section class="inner-page">
+        <div class="container justify-content-center Disease-sec-main">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="Disease-sec-input"
+            placeholder="Enter Your Name"
+          />
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+            class="Disease-sec-input"
+            placeholder="Enter Your Number"
+          />
+          <input
+            type="email"
+            class="Disease-sec-input"
+            placeholder="Enter Your email"
+          />
+
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <div class="symptoms-sec">
+                <select name="symptoms1" id="symptoms1">
+                  <option value="">Symptom 1 (none)</option>
+                </select>
+                <select name="symptoms2" id="symptoms2">
+                  <option value="symptoms2">Symptom 2 (none)</option>
+                </select>
+                <select name="symptoms3" id="symptoms3">
+                  <option value="symptoms3">Symptom 3 (none)</option>
+                </select>
+                <select name="symptoms4" id="symptoms4">
+                  <option value="symptoms4">Symptom 4 (none)</option>
+                </select>
+                <select name="symptoms5" id="symptoms5">
+                  <option value="symptoms5">Symptom 5 (none)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+              <div class="sym-acction-btn">
+                <input type="text" id="decision" /><button id="decisionbtn">
+                  <i class="fas fa-angle-double-left"></i></button
+                ><br />
+                <input type="text" id="random" /><button id="randombtn">
+                  <i class="fas fa-angle-double-left"></i></button
+                ><br />
+                <input type="text" id="naive" /><button id="naivebtn">
+                  <i class="fas fa-angle-double-left"></i></button
+                ><br />
+              </div>
+            </div>
+          </div>
+
+          <form action="/action_page.php">
+            <p>
+              If you are not satisfy with our predicted result. reach-out to our
+              expert doctors (Upload your previous medical documents)
+            </p>
+            <label for="myfile">(Optional) Select a file:</label>
+            <input
+              type="file"
+              id="myfile"
+              name="myfile"
+              class="sym-doc-input"
+            /><br /><br />
+          </form>
+
+          <button type="reset" class="sym-reset-btn">
+            <i class="fas fa-sync"></i>
+          </button>
+          <button
+            type="submit"
+            onclick="alert('Your Data Is Submited Successfully!')"
+            class="sym-reset-btn"
+          >
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="footer-info">
+                <h3>Lifesy</h3>
+                <br />
+                <p>
+                  India<br />
+                  <strong>Email:</strong> askathcrs@gmail.com<br />
+                </p>
+                <div class="social-links mt-3">
+                  <a
+                    href="https://www.facebook.com/people/Lifesy-Healthcare/100070775650062/"
+                    class="facebook"
+                    ><i class="bx bxl-facebook"></i
+                  ></a>
+                  <a
+                    href="https://www.instagram.com/caring_here/"
+                    class="instagram"
+                    ><i class="bx bxl-instagram"></i
+                  ></a>
+                  <a
+                    href="https://lifesyheathcare.blogspot.com"
+                    class="google-plus"
+                    ><i class="fa fa-rss-square"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/healthcare-recommendation-423783218/"
+                    class="linkedin"
+                    ><i class="bx bxl-linkedin"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-2 col-md-6 footer-links">
+              <h4>Useful Links</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../index.html">Home</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../index.html">Services</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../templates/documentation.html">Documentation</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../index.html">About us</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../templates/Privacy-policy.html">Privacy policy</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="./store.html">Locate a Store</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+              <h4>Our Resources</h4>
+              <ul>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../PHP Admin/patient/patient.php">Predict Disease</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="https://github.com/lifesyhealthcare">Github Rep</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../blogs.html">Blogs</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="../PHP Admin/adminlogin.php">Doctor Login</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-newsletter">
+              <h4>Subscribe to Our Newsletter</h4>
+              <p>Get Our New Updates On</p>
+
+              <input type="text" name="email" placeholder="Enter your email" />
+              <button type="submit">SUBSCRIBE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Lifesy</span></strong
+          >. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a href="../index.html">Goal Diggers & team</a>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/aos/aos.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../assets/vendor/purecounter/purecounter.js"></script>
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/python">
+
+
+                from FinalGUISetup1 import *
+
+                def decisionOutput(event):
+          	symptom1 = document["symptoms1"].value
+            symptom2 = document["symptoms2"].value
+            symptom3 = document["symptoms3"].value
+            symptom4 = document["symptoms4"].value
+            symptom5 = document["symptoms5"].value
+            symptom6 = document["symptoms6"].value
+
+          	res = decisionTree()
+
+          	document["decision"].value = res;
+
+          document["decisionbtn"].bind("click", decisionOutput)
+
+
+
+          def randomOutput(event):
+          symptom1 = document["symptoms1"].value
+          symptom2 = document["symptoms2"].value
+          symptom3 = document["symptoms3"].value
+          symptom4 = document["symptoms4"].value
+          symptom5 = document["symptoms5"].value
+          symptom6 = document["symptoms6"].value
+
+          res = randomForest()
+
+          document["random"].value = res;
+
+        document["randombtn"].bind("click", randomOutput)
+
+
+        def naiveOutput(event):
+        symptom1 = document["symptoms1"].value
+        symptom2 = document["symptoms2"].value
+        symptom3 = document["symptoms3"].value
+        symptom4 = document["symptoms4"].value
+        symptom5 = document["symptoms5"].value
+        symptom6 = document["symptoms6"].value
+
+        res = NaiveBayes()
+
+        document["random"].value = res;
+
+      document["naivebtn"].bind("click", naiveOutput)
+    </script>
+
+    <!-- Template Main JS File -->
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>
