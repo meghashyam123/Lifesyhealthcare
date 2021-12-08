@@ -3,3 +3,22 @@ We are Team of Goal Diggers. Each member of our Team is dedicated to providing t
 
 
 ![image](https://user-images.githubusercontent.com/64949388/145211229-40d66307-a33f-473c-9e22-3ecde37c6a18.png)
+
+
+Media:-
+
+Facbook Page | instagram | blogs | Linkedin
+
+Our Team
+
+Mounica Gangavaram (Machine Learning Engineer)
+
+Gaurav Sharma (Data Science and Analytics)
+
+meghashyam parab (Machine Learning Engineer)
+
+Ishika Gupta (PR)
+
+Aman Shaikh (Front End Developer)
+
+Vanita Arora (back end Developer) 
