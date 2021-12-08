@@ -1,0 +1,36 @@
+/*ChatBot*/
+.chat_icon {
+  position: fixed;
+  bottom: 0;
+  right: 30px;
+  z-index: 1000;
+  padding: 0;
+  font-size: 50px;
+  color: #000;
+  cursor: pointer;
+}
+.chat_box {
+  width: 500px;
+  height: 80vh;
+  position: fixed;
+  right: 30px;
+  top: 80px;
+  background: #dedede;
+  z-index: 1000;
+  transition: all 0.3s ease-out;
+  transform: scaleY(0);
+}
+.chat_box.active {
+  transform: scaleY(1);
+}
+#messages {
+  padding: 10px;
+}
+.my-conv-form-wrapper textarea {
+  height: 30px;
+  overflow: hidden;
+  resize: none;
+}
+.hidden {
+  display: none !important;
+}
